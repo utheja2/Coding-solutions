@@ -1,0 +1,27 @@
+You are given three integers A, B, and C. You are allowed to perform the following operation any number of times(possibly zero).
+
+• Choose any integer X such that X <= max(A, B, C) , and replace A with A^X, B with B^X, and C with C ^ ^ X .
+
+Here denote Bitwise XOR operation. Find the maximum possible value of A + B + C
+
+Example 1:
+
+Input:
+
+A = 2 , B = 3 , c = 5
+
+Output:
+
+14
+
+
+
+a,b,c =map(int,input().split(" "))
+x=max(a,b,c)
+s=0
+for i in range(x):
+    a=a^i
+    b=b^i
+    c=c^i
+    s=max(s,a+b+c)
+print(s)
